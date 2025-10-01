@@ -1,0 +1,96 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+import { ConvoiHeading } from '../components/heading/heading';
+import { PrimaryTheme } from "../theme/convoi-energy";
+
+<Meta title="Tokens/Colors" />
+
+<ConvoiHeading variant="h4" headingContent="Primary"></ConvoiHeading>
+<ColorPalette>  
+  <ColorItem 
+    title="palette.primary.main" 
+    subtitle="Deep Saffron" 
+    colors={{ DeepSaffron: PrimaryTheme.palette.primary.main }} 
+  />
+  <ColorItem 
+    title="palette.primary.light" 
+    subtitle="Seashell" 
+    colors={{ Seashell: PrimaryTheme.palette.primary.light }} 
+  />  
+  <ColorItem 
+    title="palette.primary.dark" 
+    subtitle="Ochre" 
+    colors={{ Ochre: PrimaryTheme.palette.primary.dark }} 
+  />  
+</ColorPalette>
+
+<hr></hr>
+<br></br>
+
+<ConvoiHeading variant="h4" headingContent="Secondary"></ConvoiHeading>
+<ColorPalette>  
+  <ColorItem 
+    title="palette.secondary.main" 
+    subtitle="Cyan" 
+    colors={{ Cyan: PrimaryTheme.palette.secondary.main }} 
+  />
+  <ColorItem 
+    title="palette.secondary.light" 
+    subtitle="Bubbles" 
+    colors={{ Bubbles: PrimaryTheme.palette.secondary.light }} 
+  />
+  <ColorItem 
+    title="palette.secondary.dark" 
+    subtitle="Midnight Green" 
+    colors={{ MidnightGreen: PrimaryTheme.palette.secondary.dark }} 
+  />
+</ColorPalette>
+
+<hr></hr>
+<br></br>
+
+<ConvoiHeading variant="h4" headingContent="Tertiary"></ConvoiHeading>
+<ColorPalette>  
+  <ColorItem 
+    title="palette.tertiary.main" 
+    subtitle="American Green" 
+    colors={{ AmericanGreen: PrimaryTheme.palette.tertiary.main }} 
+  />
+   <ColorItem 
+    title="palette.tertiary.light" 
+    subtitle="Bright Gray" 
+    colors={{ BrightGray: PrimaryTheme.palette.tertiary.light }} 
+  />
+   <ColorItem 
+    title="palette.tertiary.dark" 
+    subtitle="Mughal Green" 
+    colors={{ MughalGreen: PrimaryTheme.palette.tertiary.dark }} 
+  />
+</ColorPalette>
+
+<hr></hr>
+<br></br>
+
+<ConvoiHeading variant="h4" headingContent="Text"></ConvoiHeading>
+<ColorPalette>  
+  <ColorItem 
+    title="palette.text.main" 
+    subtitle="Sonic Silver" 
+    colors={{ SonicSilver: PrimaryTheme.palette.text.main }} 
+  />
+  <ColorItem 
+    title="palette.text.accent" 
+    subtitle="Deep Saffron" 
+    colors={{ DeepSaffron: PrimaryTheme.palette.text.accent }} 
+  />
+  <ColorItem 
+    title="palette.text.light" 
+    subtitle="White" 
+    colors={{ White: PrimaryTheme.palette.text.light }} 
+  />
+  <ColorItem 
+    title="palette.text.dark" 
+    subtitle="Midnight Green" 
+    colors={{ MidnightGreen: PrimaryTheme.palette.text.dark }} 
+  /> 
+</ColorPalette>

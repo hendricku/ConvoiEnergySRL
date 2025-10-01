@@ -1,0 +1,17 @@
+import { Meta } from '@storybook/blocks';
+import { ConvoiHeading } from '../components/heading/heading';
+
+import { ThemeProvider } from "@mui/material/styles"
+import { PrimaryTheme } from "../theme/convoi-energy"
+
+<Meta title="Tokens/Headings" />
+
+<ThemeProvider theme={PrimaryTheme}>
+  <ConvoiHeading variant="h1" headingContent="Heading 1"></ConvoiHeading>
+  <ConvoiHeading variant="h2" headingContent="Heading 2"></ConvoiHeading>
+  <ConvoiHeading variant="h3" headingContent="Heading 3"></ConvoiHeading>
+  <ConvoiHeading variant="h4" headingContent="Heading 4"></ConvoiHeading>
+  <ConvoiHeading variant="h5" headingContent="Heading 5"></ConvoiHeading>
+  <ConvoiHeading variant="h6" headingContent="Heading 6"></ConvoiHeading>
+  <ConvoiHeading color="accent" variant="h6" headingContent="Heading 6"></ConvoiHeading>
+</ThemeProvider>

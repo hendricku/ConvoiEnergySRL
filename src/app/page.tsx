@@ -1,0 +1,283 @@
+'use client'
+
+import Image from "next/image"
+import CableIcon from "@mui/icons-material/Cable";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import SolarPower from "@mui/icons-material/SolarPower";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { ThemeProvider, styled, Theme } from "@mui/material/styles";
+import { PrimaryTheme } from "@/theme/convoi-energy";
+
+import { ConvoiContainer } from "@/components/container/container";
+import { ConvoiHeader } from "@/components/header/header";
+import { ConvoiHeading } from "@/components/heading/heading";
+import { ConvoiHero } from "@/components/hero/hero";
+
+import bg from "@/assets/full-bg.jpg";
+import panelsSky from "@/assets/panels+sky.jpg";
+import { ConvoiAccordion } from "@/components/accordion/accordion";
+import { ConvoiButton } from "@/components/buttons/button";
+import { ConvoiDataBox } from "@/components/data-box/data-box";
+import { ConvoiFooter } from "@/components/footer/footer";
+import {
+  StyledHeroButtonContainer,
+  StyledHeroTypographyHighlighted,
+} from "@/components/hero/elements";
+import { ConvoiText } from "@/components/text/text";
+
+const faqs = [
+  {
+    heading: 'Posso venire a trovarvi ?',
+    content: <>Certamente! Siete più che benvenuti a venire a trovarci in sede durante i nostri orari di lavoro. Saremo lieti di accogliervi e rispondere alle vostre domande o discutere dei vostri interessi. Vi preghiamo di controllare i nostri orari di apertura e di pianificare la vostra visita di conseguenza.</>
+  },
+  {
+    heading: 'Come posso contattare il supporto ?',
+    content: <>Se hai bisogno di assistenza, puoi contattare il nostro team di supporto tramite il modulo di contatto sul
+    nostro sito web. Risponderemo alle tue domande nel più breve tempo possibile.</>
+  }
+];
+
+export default function Home() {
+  const StyledConvoiHeadingContainer = styled("div")(
+    ({ theme }: { theme: Theme }) => ({
+      [theme.breakpoints.up("lg")]: {
+        h2: {
+          width: "65%",
+          marginRight: "0 !important",
+          marginBottom: "10rem",
+          textAlign: "right !important",
+        },
+      },
+      [theme.breakpoints.up("xl")]: {
+        h2: {
+          width: "55%",
+          marginRight: "0 !important",
+          marginBottom: "8rem",
+          textAlign: "right !important",
+        },
+      },
+    })
+  );
+
+  const StyledDataBoxContainer = styled("div")(
+    ({ theme }: { theme: Theme }) => ({
+      gap: "8rem",
+      alignItems: "stretch",
+      flexDirection: "column",
+
+      display: "flex",
+
+      marginTop: "2rem",
+      padding: "4rem 0",
+      marginBottom: "4rem",
+
+      [theme.breakpoints.up("md")]: {
+        flexDirection: "row",
+        gap: "1rem",
+        marginBottom: "6rem",
+      },
+
+      [theme.breakpoints.up("lg")]: {
+        gap: "2rem",
+        padding: "0",
+        alignItems: "flex-start",
+        marginBottom: "8rem",
+
+        'div[color="primary"]': {
+          marginTop: "0rem",
+        },
+
+        'div[color="secondary"]': {
+          marginTop: "4rem",
+        },
+
+        'div[color="tertiary"]': {
+          marginTop: "8rem",
+        },
+      },
+
+      [theme.breakpoints.up("xl")]: {
+        marginBottom: "10rem",
+
+        'div[color="primary"]': {
+          marginTop: "0rem",
+        },
+
+        'div[color="secondary"]': {
+          marginTop: "5rem",
+        },
+
+        'div[color="tertiary"]': {
+          marginTop: "10rem",
+        },
+      },
+    })
+  );
+
+  const StyledFaqsContainer = styled("div")(
+    ({ theme }: { theme: Theme }) => ({
+      padding: "2rem 0 4rem 0",
+
+      [theme.breakpoints.up("sm")]: {
+        padding: "2rem 0 6rem 0",
+      },
+    })
+  );
+
+  const StyledGrid = styled(Box)(
+    ({ theme }: { theme: Theme }) => ({
+      display: 'flex',
+      padding: '2rem 0',
+
+      'img': {
+        display: 'none',
+      },
+
+      [theme.breakpoints.up('sm')]: {
+        flexWrap: 'nowrap',
+        gap: '2rem',
+
+        padding: '4rem 0',
+
+        'img': {
+          display: 'block',
+        },
+      },
+
+      [theme.breakpoints.up('md')]: {
+        flexWrap: 'nowrap',
+        flexDirection: 'row',
+        gap: '4rem',
+
+        padding: '4rem 0',
+      },
+
+      [theme.breakpoints.up('lg')]: {
+        marginTop: '-2rem',
+        padding: '0rem 0 4rem 0',
+      },
+
+      [theme.breakpoints.up('xl')]: {
+        marginTop: '-10rem',
+      }
+    })
+  );
+
+  const StyledGridImage = styled(Box)(
+    ({ theme }: { theme: Theme }) => ({
+      position: 'relative',
+      flex: '1',
+
+      [theme.breakpoints.up('sm')]: {
+        minHeight: '500px'
+      }
+    })
+  );
+
+  return (
+    <ThemeProvider theme={PrimaryTheme}>     
+      <ConvoiHeader/>
+
+      <ConvoiContainer background={bg.src}>
+        <ConvoiHero></ConvoiHero>
+      
+        <StyledConvoiHeadingContainer>
+          <ConvoiHeading
+            align="center"
+            color="dark"
+            headingContent={<>I vostri Partner energetici <StyledHeroTypographyHighlighted>di fiducia</StyledHeroTypographyHighlighted>, per un futuro ecosostenibile</>}
+            variant={'h2'}
+            width="80%"
+          />   
+        </StyledConvoiHeadingContainer>            
+
+        <StyledDataBoxContainer>
+          <ConvoiDataBox             
+            backgroundColor='primary'
+            content='Impianti su misura per permetterti di abbassare i costi in bolletta e allo stesso tempo fare la propria parte per il pianeta.' 
+            icon={<SolarPower />}
+            heading={<>Impianti fotovoltaici</>}
+            textColor="light"
+          />
+          <ConvoiDataBox             
+            backgroundColor='secondary'
+            content='Sistemi di generazione e distribuzione del calore tradizionali o innovativi per garantire un maggior benessere e ridurre gli sprechi.' 
+            icon={<LocalFireDepartmentIcon />}
+            heading={<>Impianti termici</>}
+            textColor="light"
+          />
+          <ConvoiDataBox             
+            backgroundColor='tertiary'
+            content='Sistemi antincendio ed illuminazione di emergenza, domotizzazione degli ambienti fino alle colonnine di ricarica per autoveicoli.' 
+            icon={<CableIcon />}
+            heading={<>Impianti elettrici e tecnologici</>}
+            textColor="light"
+          />
+        </StyledDataBoxContainer>
+
+   
+        <StyledGrid>
+          <Box sx={{ flex: '1' }}>
+            <ConvoiHeading
+              headingContent={<>Siamo sempre a disposizione dei clienti per poter superare insieme ogni ostacolo.</>}
+              color="dark"
+              variant={'h3'}
+              width='100%'
+            />
+            <ConvoiText color="main">
+              La mission di Convoi è quella di portare soluzioni energetiche innovative al servizio di privati e aziende attraverso proposte personalizzate calibrate su reali esigenze.
+            </ConvoiText>
+
+            <StyledHeroButtonContainer>
+              <ConvoiButton backgroundColor="primary" href="/contatti" textColor="light" variant="contained" label="Contatti"/>
+            </StyledHeroButtonContainer>
+
+          </Box>
+
+          <StyledGridImage>
+            <Image src={panelsSky.src} alt='Panels' fill objectFit='cover' objectPosition="bottom"></Image>
+          </StyledGridImage>
+        </StyledGrid>
+
+        {/* Second Section */}
+        <StyledGrid sx={{ marginTop: { xs: '2rem', sm: '3rem', md: '4rem' } }}>
+          <StyledGridImage>
+            <Image src={panelsSky.src} alt='Panels' fill objectFit='cover' objectPosition="bottom"></Image>
+          </StyledGridImage>
+
+          <Box sx={{ flex: '1' }}>
+            <ConvoiHeading
+              headingContent={<>Innovazione e sostenibilità al centro del nostro lavoro.</>}
+              color="dark"
+              variant={'h3'}
+              width='100%'
+            />  
+            <ConvoiText color="main">
+              Con anni di esperienza nel settore energetico, ci impegniamo a fornire tecnologie all'avanguardia che rispettano l'ambiente e ottimizzano i consumi, garantendo massima efficienza e risparmio.
+            </ConvoiText>          
+
+            <StyledHeroButtonContainer>
+              <ConvoiButton backgroundColor="primary" href="/contatti" textColor="light" variant="contained" label="Scopri di più"/>
+            </StyledHeroButtonContainer>  
+          </Box>
+        </StyledGrid>                
+
+ 
+        
+        <StyledFaqsContainer>
+          <ConvoiHeading 
+            headingContent={<>Domande Frequenti</>}
+            variant="h3"
+          />
+
+          <ConvoiText>Trova risposte alle domande più comuni per risolvere i tuoi dubbi</ConvoiText>
+
+          <ConvoiAccordion items={faqs}/>
+        </StyledFaqsContainer>
+      </ConvoiContainer>
+
+      <ConvoiFooter />
+    </ThemeProvider>
+  );
+}

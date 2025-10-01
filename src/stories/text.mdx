@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/blocks';
+import { ConvoiText } from '../components/text/text';
+
+import { ThemeProvider } from "@mui/material/styles"
+import { PrimaryTheme } from "../theme/convoi-energy"
+
+<Meta title="Tokens/Text" />
+
+<ThemeProvider theme={PrimaryTheme}>
+
+  <ConvoiText size="xs">
+    <>Sample text extra small ("xs")</>
+  </ConvoiText> 
+
+   <ConvoiText size="sm">
+    <>Sample text small ("sm")</>
+  </ConvoiText> 
+
+  <ConvoiText size="md">
+    <>Sample text medium ("md")</>
+  </ConvoiText>  
+
+  <ConvoiText size="lg">
+    <>Sample text large ("lg")</>
+  </ConvoiText>
+
+  <ConvoiText color="dark" size="lg">
+    <>Sample text primary color ("dark")</>
+  </ConvoiText>  
+
+  <ConvoiText color="accent" size="lg">
+    <>Sample text tertiary color ("accent")</>
+  </ConvoiText>  
+
+</ThemeProvider>
