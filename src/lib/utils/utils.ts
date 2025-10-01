@@ -1,5 +1,3 @@
-import { Palette } from "@mui/material/styles";
-
 export const isArrayEmpty = (array: Array<any>) => array.length < 1;
 
 export const getHeadingMarginBottom = (variant: string | undefined) => {
@@ -81,6 +79,8 @@ export const getHeadingSize = (variant: string | undefined, breakpoints: string)
       }
   }
 };
+
+import { Palette, PaletteOptions, PaletteColorOptions } from "@mui/material/styles";
 
 export const getBackgroundColor = (backgroundColor: string | undefined, palette: Palette) => {
   switch (backgroundColor) {

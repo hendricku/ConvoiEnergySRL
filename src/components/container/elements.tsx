@@ -51,8 +51,8 @@ export const StyledContainer = styled('div')<StyledContainerProps>(
     [breakpoints.up('xxl')]: {
       padding: spacing('0', 5),
     },
-    [breakpoints.up('xxxl')]: {
-      padding: spacing('0', 6),
-    }     
+    // [breakpoints.up('xxxl')]: {
+    //   padding: spacing('0', 6),
+    // }     
   })
 );

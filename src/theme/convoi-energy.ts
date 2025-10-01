@@ -1,4 +1,4 @@
-import { PaletteColorOptions, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 import { breakpoints } from "./primary/breakpoints";
 import { palette } from "./primary/palette";
@@ -7,8 +7,7 @@ import { typography } from "./primary/typography";
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
-    xxl: true,
-    xxxl: true
+    xxl: true
   }
 
   interface ThemeOptions {
@@ -20,13 +19,7 @@ declare module '@mui/material/styles' {
   }
 
   interface PaletteOptions {
-    tertiary: PaletteColorOptions
-  }
-
-  interface PaletteColorOptions {
-    dark?: string,
-    light?: string,
-    main: string
+    tertiary: any
   }
 
   interface TypeText {
@@ -39,7 +32,7 @@ declare module '@mui/material/styles' {
 
 export const PrimaryTheme = createTheme({
   themeName: 'primary',
-  breakpoints,
+
   palette,
   spacing,
   typography
