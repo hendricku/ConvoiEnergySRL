@@ -95,7 +95,7 @@ export default function Home() {
         h2: {
           width: "55%",
           marginRight: "0 !important",
-          marginBottom: "8rem",
+          marginBottom: "6rem",
           textAlign: "right !important",
         },
       },
@@ -206,7 +206,7 @@ export default function Home() {
 
       [theme.breakpoints.up('xl')]: {
         marginTop: '-2rem',
-        padding: '0rem 0 4rem 0',
+        padding: '0rem 0 5rem 0',
       }
     })
   );
@@ -231,7 +231,7 @@ export default function Home() {
       gap: '1.5rem',
 
       [theme.breakpoints.up('md')]: {
-        gap: '2rem',
+        // gap: '2rem',
       }
     })
   );
@@ -318,9 +318,9 @@ export default function Home() {
                 Con anni di esperienza nel settore energetico, ci impegniamo a fornire tecnologie all'avanguardia che rispettano l'ambiente e ottimizzano i consumi, garantendo massima efficienza e risparmio.
               </ConvoiText>          
 
-              <StyledHeroButtonContainer>
+              {/* <StyledHeroButtonContainer>
                 <ConvoiButton backgroundColor="primary" href="/contatti" textColor="light" variant="contained" label="Scopri di più"/>
-              </StyledHeroButtonContainer>  
+              </StyledHeroButtonContainer>   */}
             </StyledContentBox>
           </StyledGrid>                
 

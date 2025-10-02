@@ -23,8 +23,8 @@ export const ConvoiFooter = () => {
             <ConvoiHeading color="accent" headingContent={<>Sede Firenze</>} noMargin variant='h4' />
 
             <StyledFooterDataWrapper>
-              <ConvoiText color="light" noMargin size="sm">Via Aretina, 97</ConvoiText>
-              <ConvoiText color="light" noMargin size="sm">50136 Firenze</ConvoiText>                        
+              <ConvoiText color="light" noMargin size="sm">Via F. Brunelleschi, 40</ConvoiText>
+              <ConvoiText color="light" noMargin size="sm">Sesto F. No. 50019</ConvoiText>                        
             </StyledFooterDataWrapper>
           </StyledFooterDetailsWrapper>
 
