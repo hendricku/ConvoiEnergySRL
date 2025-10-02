@@ -1,5 +1,9 @@
+"use client"
+
+import { useState } from "react";
 import { BentoGridProps, BentoGridItem } from "./interface";
 import { StyledBentoGridContainer, StyledBentoGridItem } from "./elements";
+import { ImageModal } from "../ImageModal/ImageModal";
 
 import image1 from "../../assets/image1.webp";
 import image2 from "../../assets/image2.webp";
@@ -10,9 +14,6 @@ import image6 from "../../assets/image6.webp";
 import image7 from "../../assets/image7.webp";
 import image8 from "../../assets/image8.webp";
 import image9 from "../../assets/image9.webp";
-import generation from "../../assets/generation.jpg";
-import panelsBuilding from "../../assets/panels+buildings.jpg";
-
 
 const defaultItems: BentoGridItem[] = [
   {
@@ -60,18 +61,52 @@ const defaultItems: BentoGridItem[] = [
     image: image9.src,
     isPortrait: true,
   },
-  
-
 ];
 
 export const ConvoiBentoGrid = ({ items = defaultItems }: BentoGridProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % items.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + items.length) % items.length);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <StyledBentoGridContainer>
-      {items.map((item) => (
-        <StyledBentoGridItem key={item.id} isPortrait={item.isPortrait}>
-          <img src={item.image} alt="" />
-        </StyledBentoGridItem>
-      ))}
-    </StyledBentoGridContainer>
+    <>
+      <StyledBentoGridContainer>
+        {items.map((item, index) => (
+          <StyledBentoGridItem 
+            key={item.id} 
+            isPortrait={item.isPortrait}
+            onClick={() => handleImageClick(index)}
+          >
+            <img src={item.image} alt={`Gallery image ${index + 1}`} />
+          </StyledBentoGridItem>
+        ))}
+      </StyledBentoGridContainer>
+
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={handleClose}
+        image={items[currentImageIndex].image}
+        onNext={handleNext}
+        onPrev={handlePrev}
+        currentIndex={currentImageIndex}
+        totalImages={items.length}
+      />
+    </>
   );
 };
