@@ -1,6 +1,6 @@
 "use client"
 
-import { styled } from "@mui/material/styles"
+import { ThemeProvider, styled } from "@mui/material/styles"
 
 import { ConvoiContainer } from "@/components/container/container"
 import { ConvoiFooter } from "@/components/footer/footer"
@@ -32,7 +32,7 @@ const StyledContainer = styled("div")(
 
 export default function Contact() {
   return (
-    <>
+    <ThemeProvider theme={PrimaryTheme}>
       <ConvoiHeader />
 
       <StyledContainer>
@@ -110,6 +110,6 @@ export default function Contact() {
       </StyledContainer>
 
       <ConvoiFooter />
-    </>
+    </ThemeProvider>
   );
 }

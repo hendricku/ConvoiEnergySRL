@@ -3,10 +3,11 @@ import { styled } from "@mui/material/styles";
 import { StyledHeaderContainerProps, StyledHeaderLogoProps } from "./interfaces";
 
 export const StyledHeaderContainer = styled('div')<StyledHeaderContainerProps>(
-  ({ scroll, theme: { palette } }) => ({        
+  ({ scroll, theme: { palette } }) => ({
     position: 'fixed',
     top: 0,
     left: 0,
+    right: 0,
     borderBottom: `3px ${palette.primary.light} solid`,
     width: '100%',
     minHeight: '6vh',
@@ -25,6 +26,13 @@ export const StyledHeaderWrapper = styled('div')({
   justifyContent: 'space-between',
 
   display: 'flex',
+});
+
+export const StyledHeaderContentContainer = styled('div')({
+  width: '100%',
+  maxWidth: '1440px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
 });
 
 export const StyledHeaderLogo = styled('div')<StyledHeaderLogoProps>(

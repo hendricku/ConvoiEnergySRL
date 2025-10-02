@@ -23,7 +23,7 @@ const MaxWidthConvoi = styled("div")(
   ({ theme }) => ({
     maxWidth: '1440px',
     margin: '0 auto',
-    padding: '0 1rem',
+    // padding: '0 1rem',
 
     [theme.breakpoints.up('sm')]: {
       padding: '0 2rem',

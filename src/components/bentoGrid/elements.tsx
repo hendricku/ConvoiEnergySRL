@@ -11,7 +11,7 @@ export const StyledBentoGridContainer = styled('div')(
     gridTemplateColumns: 'repeat(4, 1fr)',
     gridAutoRows: '200px',
     gap: '24px',    
-    padding: 0,
+    // padding: 0,
     width: '100%',
 
     [breakpoints.down('lg')]: {
@@ -44,7 +44,7 @@ export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
 
     '&:nth-of-type(1)': {
       gridColumn: 'span 1',
-      gridRow: 'span 1',
+      gridRow: 'span 2',
     },
     '&:nth-of-type(2)': {
       gridColumn: 'span 1',
@@ -60,7 +60,7 @@ export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
     },
     '&:nth-of-type(5)': {
       gridColumn: 'span 1',
-      gridRow: 'span 1',
+      gridRow: 'span 2',
     },
     '&:nth-of-type(6)': {
       gridColumn: 'span 1',
@@ -75,9 +75,11 @@ export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
       gridRow: 'span 2', // Portrait
     },
     '&:nth-of-type(9)': {
-      gridColumn: 'span 1',
+      gridColumn: 'span 3',
       gridRow: 'span 2', // Portrait
     },
+ 
+
 
     [breakpoints.down('lg')]: {
       '&:nth-of-type(7)': {

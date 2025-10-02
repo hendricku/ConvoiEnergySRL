@@ -15,6 +15,12 @@ export const StyledFooterContainer = styled('div')(
   })
 );
 
+export const StyledFooterInnerContainer = styled('div')({
+  maxWidth: '1440px',
+  margin: '0 auto',
+  width: '100%',
+});
+
 export const StyledFooterDetailsWrapper = styled('div')(
   ({ theme: { breakpoints } }) => ({
     flexDirection: 'column',

@@ -39,7 +39,7 @@ const faqs = [
 ];
 
 export default function Home() {
-  // Full-width background container with max-width content wrapper
+
   const StyledFullWidthSection = styled("div")(
     ({ theme }: { theme: Theme }) => ({
       width: '100%',
@@ -95,7 +95,7 @@ export default function Home() {
         h2: {
           width: "55%",
           marginRight: "0 !important",
-          marginBottom: "6rem",
+          marginBottom: "7rem",
           textAlign: "right !important",
         },
       },
@@ -201,12 +201,12 @@ export default function Home() {
 
       [theme.breakpoints.up('lg')]: {
         marginTop: '-2rem',
-        padding: '0rem 0 4rem 0',
+        padding: '0rem 0 80px 0',
       },
 
       [theme.breakpoints.up('xl')]: {
-        marginTop: '-2rem',
-        padding: '0rem 0 5rem 0',
+        marginTop: '2rem',
+        // padding: '0rem 0 80px 0',
       }
     })
   );
@@ -228,7 +228,7 @@ export default function Home() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      gap: '1.5rem',
+      // gap: '1.5rem',
 
       [theme.breakpoints.up('md')]: {
         // gap: '2rem',
@@ -309,13 +309,13 @@ export default function Home() {
 
             <StyledContentBox sx={{ order: { xs: 1, md: 2 } }}>
               <ConvoiHeading
-                headingContent={<>Innovazione e sostenibilità al centro del nostro lavoro.</>}
+                headingContent={<>Innovazione, sostenibilità e assistenza affidabile al centro del nostro lavoro.</>}
                 color="dark"
                 variant={'h3'}
                 width='100%'
               />  
               <ConvoiText color="main">
-                Con anni di esperienza nel settore energetico, ci impegniamo a fornire tecnologie all'avanguardia che rispettano l'ambiente e ottimizzano i consumi, garantendo massima efficienza e risparmio.
+                Con un esperienza consolidata nel settore energetico, non ci limitiamo a installare pannelli solari: offriamo anche servizi di manutenzione proattiva per garantire impianti sempre efficienti, sicuri e duraturi. Il nostro obiettivo è costruire un rapporto di fiducia, accompagnandoti nel tempo con soluzioni personalizzate che ottimizzano i consumi e generano risparmio reale.
               </ConvoiText>          
 
               {/* <StyledHeroButtonContainer>

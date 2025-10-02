@@ -45,3 +45,10 @@ export const StyledContainer = styled('div')<StyledContainerProps>(
     }
   })
 );
+
+export const StyledHeaderContentContainer = styled('div')({
+  width: '100%',
+  maxWidth: '1440px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+});

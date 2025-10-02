@@ -4,15 +4,14 @@ import { useEffect, useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 
-
 import {
   StyledHeaderContainer,
   StyledHeaderLogo,
   StyledHeaderWrapper,
-  StyledNavigation
+  StyledNavigation,
+  StyledHeaderContentContainer
 } from "./elements"
 import { ConvoiButton } from '../buttons/button'
-import { ConvoiContainer } from '../container/container';
 import { ConvoiLogo } from '../logo/logo';
 import logo from '../../assets/logo.svg'
 
@@ -39,7 +38,7 @@ export const ConvoiHeader = () => {
   
   return (
       <StyledHeaderContainer scroll={scroll}>
-        <ConvoiContainer>
+        <StyledHeaderContentContainer>
           <StyledHeaderWrapper>
             <StyledHeaderLogo scroll={scroll}>
               <ConvoiLogo alt='logo' href='/' src={logo.src}/>
@@ -52,7 +51,7 @@ export const ConvoiHeader = () => {
             </StyledNavigation>
           
           </StyledHeaderWrapper>    
-        </ConvoiContainer>
+        </StyledHeaderContentContainer>
       </StyledHeaderContainer>
   )
 }
