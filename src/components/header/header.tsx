@@ -47,7 +47,7 @@ export const ConvoiHeader = () => {
 
             <StyledNavigation>
              
-              <ConvoiButton href="/lavori" label="lavori"  />
+              <ConvoiButton href="/lavori" label="Lavori"  />
                <ConvoiButton href="/contatti" label="Contatti" startIcon={<EmailIcon />}/>
             </StyledNavigation>
           

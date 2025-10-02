@@ -91,11 +91,11 @@ export default function Home() {
         },
       },
       [theme.breakpoints.up("xl")]: {
-        marginTop: "14rem",
+        marginTop: "1rem",
         h2: {
-          width: "75%",
+          width: "55%",
           marginRight: "0 !important",
-          marginTop: "22rem",
+          marginBottom: "8rem",
           textAlign: "right !important",
         },
       },
