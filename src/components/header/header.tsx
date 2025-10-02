@@ -21,12 +21,21 @@ export const ConvoiHeader = () => {
 
   useEffect(() => {    
     const checkScroll = () => {
-      setScroll(window.scrollY > 0);
+      const isScrolled = window.scrollY > 0;
+      console.log('Scroll position:', window.scrollY, 'isScrolled:', isScrolled);
+      setScroll(isScrolled);
     }
+
+    // Set initial scroll state on mount
+    checkScroll();
     
     window.addEventListener("scroll", checkScroll);
-    
-  }, [scroll]);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", checkScroll);
+    };
+  }, []);
   
   return (
       <StyledHeaderContainer scroll={scroll}>
@@ -38,7 +47,7 @@ export const ConvoiHeader = () => {
 
             <StyledNavigation>
              
-              <ConvoiButton href="/segnaposto" label="Segnaposto"  />
+              <ConvoiButton href="/lavori" label="lavori"  />
                <ConvoiButton href="/contatti" label="Contatti" startIcon={<EmailIcon />}/>
             </StyledNavigation>
           

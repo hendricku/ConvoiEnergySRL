@@ -1,7 +1,7 @@
 export interface StyledHeaderContainerProps {
-  scroll: Boolean
+  scroll: boolean
 }
 
 export interface StyledHeaderLogoProps {
-  scroll: Boolean
+  scroll: boolean
 }

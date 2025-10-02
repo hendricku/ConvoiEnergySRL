@@ -1,1 +1,1 @@
-export const spacing = [16, 48, 96, 128, 256, 384, 512];
+export const spacing = [16, 48, 96, 128, 256];

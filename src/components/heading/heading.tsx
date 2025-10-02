@@ -6,6 +6,7 @@ export const ConvoiHeading = ({
   variant,
   width,  
   align = 'left',
+
   color = 'dark',
   noMargin = false
 }: ConvoiHeadingProps) => {

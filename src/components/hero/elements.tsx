@@ -25,7 +25,6 @@ export const StyledHeroContainer = styled('div')(
 
     [breakpoints.up('lg')]: {
       gap: '4rem',
-
       marginBottom: '-8rem',
     },
 
@@ -33,9 +32,9 @@ export const StyledHeroContainer = styled('div')(
       marginBottom: '-24rem',
     },
 
-    // [breakpoints.up('xxxl')]: {
-    //   padding: '12rem 0 6rem 0',
-    // },
+    [breakpoints.up('xxl')]: {
+      marginBottom: '-28rem',
+    },
   })
 );
 

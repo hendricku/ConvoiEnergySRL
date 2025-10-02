@@ -11,7 +11,6 @@ export const StyledContainer = styled('div')<StyledContainerProps>(
     boxSizing: 'border-box',
     
     width: '100%',
-    // maxWidth: '1440px',
     margin: 'auto',
     padding: spacing('0', 0),
 
@@ -25,15 +24,11 @@ export const StyledContainer = styled('div')<StyledContainerProps>(
       backgroundImage: background
         ? `url(${background})`
         : '',
-      backgroundSize: '100%',
+      backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundRepeat: 'repeat',
+      backgroundRepeat: 'no-repeat',
 
       zIndex: '-1',
-
-      [breakpoints.up('xl')]: {
-        backgroundSize: 'cover',
-      },
     },    
     
     [breakpoints.up('md')]: {
@@ -45,14 +40,8 @@ export const StyledContainer = styled('div')<StyledContainerProps>(
     [breakpoints.up('xl')]: {
       padding: spacing('0', 3),
     },
-    [breakpoints.up('xl')]: {
-      padding: spacing('0', 4),
-    },
     [breakpoints.up('xxl')]: {
       padding: spacing('0', 5),
-    },
-    // [breakpoints.up('xxxl')]: {
-    //   padding: spacing('0', 6),
-    // }     
+    }
   })
 );

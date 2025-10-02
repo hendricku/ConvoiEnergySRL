@@ -5,10 +5,11 @@ import { StyledHeaderContainerProps, StyledHeaderLogoProps } from "./interfaces"
 export const StyledHeaderContainer = styled('div')<StyledHeaderContainerProps>(
   ({ scroll, theme: { palette } }) => ({        
     position: 'fixed',
-
+    top: 0,
+    left: 0,
     borderBottom: `3px ${palette.primary.light} solid`,
     width: '100%',
-    minheight: '6vh',
+    minHeight: '6vh',
 
     background: scroll
       ? '#ffffff'

@@ -1,0 +1,1 @@
+- [x] Update StyledHeaderContainer in src/components/header/elements.tsx to add maxWidth: '1440px', change left to '50%', and add transform: 'translateX(-50%)'

@@ -33,6 +33,7 @@ declare module '@mui/material/styles' {
 export const PrimaryTheme = createTheme({
   themeName: 'primary',
 
+  breakpoints,
   palette,
   spacing,
   typography
