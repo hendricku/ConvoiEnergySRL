@@ -80,7 +80,7 @@ export default function Lavori() {
         <MaxWidthConvoi>
           <StyledContainer>
             <ConvoiHeading
-              headingContent={<>Lavori</>}
+              headingContent={<>Una selezione dei nostri lavori</>}
               variant="h2"
               color="dark"
             />

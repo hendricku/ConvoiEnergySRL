@@ -71,11 +71,11 @@ export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
       gridRow: 'span 1',
     },
     '&:nth-of-type(8)': {
-      gridColumn: 'span 1',
+      gridColumn: 'span 2',
       gridRow: 'span 2', // Portrait
     },
     '&:nth-of-type(9)': {
-      gridColumn: 'span 3',
+      gridColumn: 'span 2',
       gridRow: 'span 2', // Portrait
     },
  
