@@ -11,7 +11,6 @@ export const StyledBentoGridContainer = styled('div')(
     gridTemplateColumns: 'repeat(4, 1fr)',
     gridAutoRows: '200px',
     gap: '24px',    
-    // padding: 0,
     width: '100%',
 
     [breakpoints.down('lg')]: {
@@ -27,13 +26,13 @@ export const StyledBentoGridContainer = styled('div')(
     [breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr',
       gridAutoRows: '200px',
+      gap: '16px',
     },
   })
 );
 
 export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
   ({ theme: { spacing, breakpoints, palette }, isPortrait, isTextBlock }) => ({
-    // borderRadius: spacing(1),
     overflow: 'hidden',
     position: 'relative',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -72,11 +71,11 @@ export const StyledBentoGridItem = styled('div')<StyledBentoGridItemProps>(
     },
     '&:nth-of-type(8)': {
       gridColumn: 'span 2',
-      gridRow: 'span 2', // Portrait
+      gridRow: 'span 2',
     },
     '&:nth-of-type(9)': {
       gridColumn: 'span 2',
-      gridRow: 'span 2', // Portrait
+      gridRow: 'span 2',
     },
  
 

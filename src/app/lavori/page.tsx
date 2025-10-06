@@ -23,7 +23,7 @@ const MaxWidthConvoi = styled("div")(
   ({ theme }) => ({
     maxWidth: '1440px',
     margin: '0 auto',
-    // padding: '0 1rem',
+    padding: '0 1rem',
 
     [theme.breakpoints.up('sm')]: {
       padding: '0 2rem',
@@ -55,27 +55,29 @@ const StyledContainer = styled("div")(
   })
 )
 
-const StyledBentoWrapper = styled("div")({
-  margin: '0 calc(-1rem + 4rem)',
-  
-  '@media (min-width: 600px)': {
-    margin: '0 calc(-2rem + 4rem)',
-  },
-  
-  '@media (min-width: 900px)': {
-    margin: '0 calc(-3rem + 4rem)',
-  },
-  
-  '@media (min-width: 1200px)': {
-    margin: '0 calc(-4rem + 4rem)',
-  },
-})
+const StyledBentoWrapper = styled("div")(
+  ({ theme }) => ({
+    margin: '0',
+
+    [theme.breakpoints.up('sm')]: {
+      margin: '0',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      margin: '0',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      margin: '0',
+    },
+  })
+)
 
 export default function Lavori() {
   return (
     <ThemeProvider theme={PrimaryTheme}>
       <ConvoiHeader />
-
+      
       <StyledFullWidthSection>
         <MaxWidthConvoi>
           <StyledContainer>
@@ -85,13 +87,14 @@ export default function Lavori() {
               color="dark"
             />
 
+
             <StyledBentoWrapper>
               <ConvoiBentoGrid />
             </StyledBentoWrapper>
           </StyledContainer>
         </MaxWidthConvoi>
       </StyledFullWidthSection>
-
+      
       <ConvoiFooter />
     </ThemeProvider>
   )

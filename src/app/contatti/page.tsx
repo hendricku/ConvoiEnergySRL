@@ -20,11 +20,12 @@ import { PrimaryTheme } from "@/theme/convoi-energy"
 import bg from "@/assets/full-bg.jpg"
 import panelBuildings from "@/assets/panels+buildings.jpg"
 
-const StyledContainer = styled("div")(
+const StyledBackgroundWrapper = styled("div")(
   ({ theme: { breakpoints } }) => ({
     minHeight: "100vh",
     paddingTop: "10rem !important",
     paddingBottom: '4rem',
+    width: '100%',
 
     background: `url(${bg.src})`,
     backgroundSize: '100%',
@@ -39,6 +40,12 @@ const StyledContainer = styled("div")(
     }
   })
 );
+
+const StyledContentContainer = styled("div")({
+  maxWidth: '1440px',
+  margin: '0 auto',
+  width: '100%',
+});
 
 const StyledInput = styled(TextField)(({ theme: { palette } }) => ({
   width: "100%",
@@ -284,134 +291,136 @@ export default function Contact() {
     <ThemeProvider theme={PrimaryTheme}>
       <ConvoiHeader />
 
-      <StyledContainer>
-        <ConvoiContainer>
-          <ConvoiHeading
-            headingContent={<>Contattaci</>}
-            noMargin
-            variant="h2"
-          />
-          <ConvoiText>
-            Siamo qui per ascoltarti, collaborare con te e offrirti il supporto
-            di cui hai bisogno per raggiungere i tuoi obiettivi. Contattaci oggi
-            stesso per scoprire come possiamo aiutarti a realizzare i tuoi
-            progetti con successo.
-          </ConvoiText>
+      <StyledBackgroundWrapper>
+        <StyledContentContainer>
+          <ConvoiContainer>
+            <ConvoiHeading
+              headingContent={<>Contattaci</>}
+              noMargin
+              variant="h2"
+            />
+            <ConvoiText>
+              Siamo qui per ascoltarti, collaborare con te e offrirti il supporto
+              di cui hai bisogno per raggiungere i tuoi obiettivi. Contattaci oggi
+              stesso per scoprire come possiamo aiutarti a realizzare i tuoi
+              progetti con successo.
+            </ConvoiText>
 
-          <Grid container>
-            <StyledFormWrapper item xs={12} sm={6}>
-              <StyledFormControl>
-                <Grid container columnSpacing={1}>
-                  <Grid item xs={12} sm={6}>
-                    <StyledInput
-                      error={
-                        (touched.firstName && !values.firstName) ||
-                        error.form.firstName
-                      }
-                      helperText={getHelperText("firstName")}
-                      inputProps={{ pattern: "[A-Za-z ]+", type: "text" }}
-                      name="firstName"
-                      onBlur={onBlur}
-                      onChange={handleChange}
-                      placeholder="Nome"
-                      value={values.firstName}
-                      variant="standard"
-                    />
+            <Grid container>
+              <StyledFormWrapper item xs={12} sm={6}>
+                <StyledFormControl>
+                  <Grid container columnSpacing={1}>
+                    <Grid item xs={12} sm={6}>
+                      <StyledInput
+                        error={
+                          (touched.firstName && !values.firstName) ||
+                          error.form.firstName
+                        }
+                        helperText={getHelperText("firstName")}
+                        inputProps={{ pattern: "[A-Za-z ]+", type: "text" }}
+                        name="firstName"
+                        onBlur={onBlur}
+                        onChange={handleChange}
+                        placeholder="Nome"
+                        value={values.firstName}
+                        variant="standard"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <StyledInput
+                        error={
+                          (touched.lastName && !values.lastName) ||
+                          error.form.lastName
+                        }
+                        helperText={getHelperText("lastName")}
+                        inputProps={{ pattern: "[A-Za-z ]+" }}
+                        name="lastName"
+                        onBlur={onBlur}
+                        onChange={handleChange}
+                        placeholder="Cognome"
+                        value={values.lastName}
+                        variant="standard"
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <StyledInput
-                      error={
-                        (touched.lastName && !values.lastName) ||
-                        error.form.lastName
-                      }
-                      helperText={getHelperText("lastName")}
-                      inputProps={{ pattern: "[A-Za-z ]+" }}
-                      name="lastName"
-                      onBlur={onBlur}
-                      onChange={handleChange}
-                      placeholder="Cognome"
-                      value={values.lastName}
-                      variant="standard"
-                    />
-                  </Grid>
-                </Grid>
 
-                <StyledInput
-                  error={(touched.email && !values.email) || error.form.email}
-                  helperText={getHelperText("email")}
-                  name="email"
-                  onBlur={onBlur}
-                  onChange={handleChange}
-                  placeholder="Email"
-                  value={values.email}
-                  variant="standard"
-                />
-
-                <StyledInput
-                  error={error.form.phone}
-                  helperText={getHelperText("phone")}
-                  inputProps={{ pattern: "[+][0-9 ]+" }}
-                  name="phone"
-                  onChange={handleChange}
-                  placeholder="Telefono"
-                  value={values.phone}
-                  variant="standard"
-                />
-
-                <StyledInput
-                  id="message"
-                  multiline
-                  name="message"
-                  onChange={handleChange}
-                  placeholder="Messaggio"
-                  value={values.message}
-                  variant="standard"
-                />
-
-                <ReCAPTCHA
-                  sitekey="6LfW7swpAAAAAJSk6OA-EiAvF8a0-wS8sLBYBAv9"
-                  size="invisible"
-                />
-
-                <br />
-                <br />
-                
-                <StyledConvoiButtonContainer>
-                  <ConvoiButton                  
-                    backgroundColor="primary"              
-                    isLoading={isLoading}
-                    label="Invia"
-                    onClick={onSubmit}
-                    textColor="light"
-                    variant="contained"
+                  <StyledInput
+                    error={(touched.email && !values.email) || error.form.email}
+                    helperText={getHelperText("email")}
+                    name="email"
+                    onBlur={onBlur}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    value={values.email}
+                    variant="standard"
                   />
-                </StyledConvoiButtonContainer>
 
-                <br />
+                  <StyledInput
+                    error={error.form.phone}
+                    helperText={getHelperText("phone")}
+                    inputProps={{ pattern: "[+][0-9 ]+" }}
+                    name="phone"
+                    onChange={handleChange}
+                    placeholder="Telefono"
+                    value={values.phone}
+                    variant="standard"
+                  />
 
-                {error && (
-                  <ConvoiHeading variant="h6" color="accent" headingContent={<>{error.api}</>}/>                  
-                )}
+                  <StyledInput
+                    id="message"
+                    multiline
+                    name="message"
+                    onChange={handleChange}
+                    placeholder="Messaggio"
+                    value={values.message}
+                    variant="standard"
+                  />
 
-                {messageSent && (
-                  <ConvoiHeading variant="h6" color="accent" headingContent={<>{messageSent}</>}/>
-                )}
-              </StyledFormControl>
-            </StyledFormWrapper>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              sx={{
-                background: `url(${panelBuildings.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: "50vh",
-              }}
-            ></Grid>
-          </Grid>
-        </ConvoiContainer>
-      </StyledContainer>
+                  <ReCAPTCHA
+                    sitekey="6LfW7swpAAAAAJSk6OA-EiAvF8a0-wS8sLBYBAv9"
+                    size="invisible"
+                  />
+
+                  <br />
+                  <br />
+                  
+                  <StyledConvoiButtonContainer>
+                    <ConvoiButton                  
+                      backgroundColor="primary"              
+                      isLoading={isLoading}
+                      label="Invia"
+                      onClick={onSubmit}
+                      textColor="light"
+                      variant="contained"
+                    />
+                  </StyledConvoiButtonContainer>
+
+                  <br />
+
+                  {error && (
+                    <ConvoiHeading variant="h6" color="accent" headingContent={<>{error.api}</>}/>                  
+                  )}
+
+                  {messageSent && (
+                    <ConvoiHeading variant="h6" color="accent" headingContent={<>{messageSent}</>}/>
+                  )}
+                </StyledFormControl>
+              </StyledFormWrapper>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                sx={{
+                  background: `url(${panelBuildings.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  minHeight: "50vh",
+                }}
+              ></Grid>
+            </Grid>
+          </ConvoiContainer>
+        </StyledContentContainer>
+      </StyledBackgroundWrapper>
 
       <ConvoiFooter />
     </ThemeProvider>

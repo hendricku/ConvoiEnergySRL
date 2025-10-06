@@ -14,6 +14,7 @@ import { ConvoiHeader } from "@/components/header/header";
 import { ConvoiHeading } from "@/components/heading/heading";
 import { ConvoiHero } from "@/components/hero/hero";
 
+import Maintenance from "@/assets/Maintenance.jpeg";
 import bg from "@/assets/full-bg.jpg";
 import panelsSky from "@/assets/panels+sky.jpg";
 import { ConvoiAccordion } from "@/components/accordion/accordion";
@@ -111,7 +112,7 @@ export default function Home() {
       display: "flex",
       marginTop: "2rem",
       padding: "4rem 0",
-      marginBottom: "4rem",
+      // marginBottom: "1rem",
 
       [theme.breakpoints.up("md")]: {
         flexDirection: "row",
@@ -144,7 +145,7 @@ export default function Home() {
       },
 
       [theme.breakpoints.up("xl")]: {
-        marginBottom: "10rem",
+        // marginBottom: "10rem",
 
         'div[color="primary"]': {
           marginTop: "0rem",
@@ -165,8 +166,10 @@ export default function Home() {
     ({ theme }: { theme: Theme }) => ({
       padding: "2rem 0 4rem 0",
 
+      
+
       [theme.breakpoints.up("sm")]: {
-        padding: "2rem 0 6rem 0",
+        padding: "1rem 0 6rem 0",
       },
     })
   );
@@ -174,39 +177,33 @@ export default function Home() {
   const StyledGrid = styled(Box)(
     ({ theme }: { theme: Theme }) => ({
       display: 'flex',
+      flexDirection: 'column',
       padding: '2rem 0',
-
-      'img': {
-        display: 'none',
-      },
+      gap: '1.5rem',
 
       [theme.breakpoints.up('sm')]: {
         flexWrap: 'nowrap',
         gap: '2rem',
-
-        padding: '4rem 0',
-
-        'img': {
-          display: 'block',
-        },
+        padding: '3rem 0',
       },
 
       [theme.breakpoints.up('md')]: {
         flexWrap: 'nowrap',
         flexDirection: 'row',
-        gap: '4rem',
-
-        padding: '4rem 0',
+        gap: '3rem',
+        // padding: '4rem 0',
       },
 
       [theme.breakpoints.up('lg')]: {
+        gap: '4rem',
         marginTop: '-2rem',
-        padding: '0rem 0 80px 0',
+        padding: '0rem 0 5rem 0',
       },
 
       [theme.breakpoints.up('xl')]: {
+        gap: '5rem',
         marginTop: '2rem',
-        // padding: '0rem 0 80px 0',
+        padding: '0rem 0 3rem 0',
       }
     })
   );
@@ -214,9 +211,15 @@ export default function Home() {
   const StyledGridImage = styled(Box)(
     ({ theme }: { theme: Theme }) => ({
       position: 'relative',
-      flex: '1',
+      width: '100%',
+      minHeight: '300px',
 
       [theme.breakpoints.up('sm')]: {
+        minHeight: '400px'
+      },
+
+      [theme.breakpoints.up('md')]: {
+        flex: '1',
         minHeight: '500px'
       }
     })
@@ -231,7 +234,15 @@ export default function Home() {
       // gap: '1.5rem',
 
       [theme.breakpoints.up('md')]: {
+        gap: '2rem',
+      },
+
+      [theme.breakpoints.up('lg')]: {
         // gap: '2rem',
+      },
+
+      [theme.breakpoints.up('xl')]: {
+        // gap: '2.5rem',
       }
     })
   );
@@ -280,7 +291,11 @@ export default function Home() {
 
      
           <StyledGrid>
-            <StyledContentBox>
+            <StyledGridImage sx={{ order: { xs: 1, md: 2 } }}>
+              <Image src={panelsSky.src} alt='Panels' fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            </StyledGridImage>
+
+            <StyledContentBox sx={{ order: { xs: 2, md: 1 } }}>
               <ConvoiHeading
                 headingContent={<>Siamo sempre a disposizione dei clienti per poter superare insieme ogni ostacolo.</>}
                 color="dark"
@@ -295,19 +310,15 @@ export default function Home() {
                 <ConvoiButton backgroundColor="primary" href="/contatti" textColor="light" variant="contained" label="Contatti"/>
               </StyledHeroButtonContainer>
             </StyledContentBox>
-
-            <StyledGridImage>
-              <Image src={panelsSky.src} alt='Panels' fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
-            </StyledGridImage>
           </StyledGrid>
 
           {/* Second Section */}
           <StyledGrid>
-            <StyledGridImage sx={{ order: { xs: 2, md: 1 } }}>
-              <Image src={panelsSky.src} alt='Panels' fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            <StyledGridImage sx={{ order: { xs: 1, md: 1 } }}>
+              <Image src={Maintenance.src} alt='Panels' fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
             </StyledGridImage>
 
-            <StyledContentBox sx={{ order: { xs: 1, md: 2 } }}>
+            <StyledContentBox sx={{ order: { xs: 2, md: 2 } }}>
               <ConvoiHeading
                 headingContent={<>Innovazione, sostenibilità e assistenza affidabile al centro del nostro lavoro.</>}
                 color="dark"

@@ -49,5 +49,13 @@ export const StyledHeaderLogo = styled('div')<StyledHeaderLogoProps>(
 
 export const StyledNavigation = styled('div')({
   alignItems: 'center',
-  display: 'flex'    
+  display: 'flex',
+  
+  '& .MuiButton-root': {
+    padding: '5px 15px',
+    
+    '& .MuiButton-startIcon': {
+      marginRight: '4px',
+    },
+  },
 });
